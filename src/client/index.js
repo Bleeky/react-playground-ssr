@@ -4,13 +4,13 @@ import { Provider } from 'react-redux';
 import configureStore from '../common/store/configureStore';
 import App from '../common/containers/App';
 
-const store = configureStore(window.__PRELOADED_STATE__);
+const store = configureStore(window.__PRELOADED_STATE__); // eslint-disable-line
 
 hydrate(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 if (module.hot) {
@@ -19,7 +19,7 @@ if (module.hot) {
       <Provider store={store}>
         <App />
       </Provider>,
-      document.getElementById('root')
+      document.getElementById('root'),
     );
   });
 }

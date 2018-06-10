@@ -1,0 +1,32 @@
+{
+  "env": {
+    "production": {
+      "plugins": ["transform-react-remove-prop-types"]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src/common"],
+      }
+    ],
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true,
+      }
+    ],
+    "syntax-dynamic-import",
+    "transform-react-inline-elements",
+    "idx",
+    "react-loadable/babel",
+  ],
+  "presets": [
+    "env",
+    "react",
+    "razzle/babel",
+    "stage-0",
+  ],
+}
